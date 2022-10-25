@@ -1,7 +1,20 @@
-import '../styles/globals.css'
+import { createTheme } from "@mui/material";
+import { ThemeProvider } from "@mui/system";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  let theme = createTheme({
+    palette: {
+      cs: {
+        main: "#02bf90",
+      },
+    },
+  });
+  return (
+    <ThemeProvider theme={theme}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
