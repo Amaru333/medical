@@ -23,7 +23,7 @@ function DashboardHeader() {
           <div>
             <p className="m-0 mt-4 text-xs text-gr">Previous appointment</p>
             <span className="flex items-center cursor-pointer">
-              <p className="text-2xl font-semibold m-0 mr-2">5th Sept, 2022</p>
+              <p className="text-2xl font-semibold m-0 mr-2">5th Sept, 2021</p>
               <DownloadIcon />
             </span>
           </div>

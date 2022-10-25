@@ -13,8 +13,11 @@ import TextField from "@mui/material/TextField";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Button } from "@mui/material";
+import { useRouter } from "next/router";
 
 function LoginComponent() {
+  const router = useRouter();
+
   const [values, setValues] = React.useState({
     amount: "",
     password: "",
@@ -22,6 +25,10 @@ function LoginComponent() {
     weightRange: "",
     showPassword: false,
   });
+
+  const onClickLogin = () => {
+    router.push("/dashboard");
+  };
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
@@ -64,7 +71,9 @@ function LoginComponent() {
           </FormControl>
           <div className="flex flex-row justify-center mt-6">
             <Button variant="contained" sx={{ marginRight: "1rem" }}>
-              Log In
+              <p className="m-0" onClick={onClickLogin}>
+                Log In
+              </p>
             </Button>
             <Button variant="outlined">Register</Button>
           </div>
